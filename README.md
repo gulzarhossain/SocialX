@@ -10,3 +10,6 @@
 
 * Apk Link
   https://github.com/gulzarhossain/SocialX/blob/main/ScreenRecord/SocialX.apk
+  
+* Screen Record Link
+  https://github.com/gulzarhossain/SocialX/blob/main/ScreenRecord/SocialX_Record.mp4
