@@ -22,45 +22,51 @@ public class SingUp_Frag extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        this.context=context;
+        this.context = context;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding= DataBindingUtil.inflate(inflater,R.layout.fragment_sing_up_,container,false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sing_up_, container, false);
 
         binding.btRegister.setOnClickListener(view -> {
-            if (validateForm()){
-                AppPreferences.setUserEmail(context,binding.etEmail.getText().toString().trim());
-                AppPreferences.setUserName(context,binding.etName.getText().toString().trim());
-                AppPreferences.setUserPhone(context,binding.etPhone.getText().toString().trim());
-                AppPreferences.setUserPass(context,binding.etPass.getText().toString().trim());
+            if (validateForm()) {
+                AppPreferences.setUserEmail(context, binding.etEmail.getText().toString().trim());
+                AppPreferences.setUserName(context, binding.etName.getText().toString().trim());
+                AppPreferences.setUserPhone(context, binding.etPhone.getText().toString().trim());
+                AppPreferences.setUserPass(context, binding.etPass.getText().toString().trim());
                 Toast.makeText(context, "Account Created /n Log in", Toast.LENGTH_LONG).show();
             }
         });
+
+        binding.btSignIn.setOnClickListener(v -> {
+            ((FragmentHolder) context).binding.btLogin.performClick();
+        });
+
         return binding.getRoot();
     }
+
     private boolean validateForm() {
-        boolean val=true;
-            if (binding.etEmail.getText().length()<8) {
-                binding.etEmail.setError("Invalid Email ID");
-                val = false;
-            }
-            if (binding.etPass.getText().length() <4) {
-                binding.etPass.setError("Min 4 characters");
-                val = false;
-            }
-        if (binding.etName.getText().length() <6) {
+        boolean val = true;
+        if (binding.etEmail.getText().length() < 8) {
+            binding.etEmail.setError("Invalid Email ID");
+            val = false;
+        }
+        if (binding.etPass.getText().length() < 4) {
+            binding.etPass.setError("Min 4 characters");
+            val = false;
+        }
+        if (binding.etName.getText().length() < 6) {
             binding.etName.setError("Min 6 characters");
             val = false;
         }
-        if (binding.etPhone.getText().length() <10) {
+        if (binding.etPhone.getText().length() < 10) {
             binding.etPhone.setError("Invalid phone number");
             val = false;
         }
-        if (!binding.chekTerm.isChecked()){
-            val=false;
+        if (!binding.chekTerm.isChecked()) {
+            val = false;
             Toast.makeText(context, "Check Terms and Conditions", Toast.LENGTH_SHORT).show();
         }
         return val;

@@ -186,6 +186,7 @@
                     android:text="Already have an Account" />
 
                 <TextView
+                    android:id="@+id/btSignIn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"

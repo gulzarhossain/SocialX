@@ -81,6 +81,9 @@ public class Login_Frag extends Fragment {
             Intent signInIntent = mGoogleSignInClient.getSignInIntent();
             startActivityForResult(signInIntent, GGL_SIGN_IN);
         });
+        binding.btRegister.setOnClickListener(v->{
+            ((FragmentHolder)context).binding.btSingUp.performClick();
+        });
         callbackManager = CallbackManager.Factory.create();
 
         binding.fbloginButton.setReadPermissions(Arrays.asList("email", "public_profile"));
