@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Social X</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="facebook_app_id">735683074101482</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">f596ae2aaa49ee19603c2ed450f84454</string>
+
+
+</resources>
